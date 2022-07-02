@@ -11,7 +11,7 @@ from mpl_toolkits.mplot3d import Axes3D
 from ipywidgets import interact
 
 def jnp_bivariate_normal_pdf(domain, mean, variance):
-      X = jnp.arange(-domain+mean, domain+mean, variance)
+  X = jnp.arange(-domain+mean, domain+mean, variance)
   Y = jnp.arange(-domain+mean, domain+mean, variance)
   X, Y = jnp.meshgrid(X, Y)
   R = jnp.sqrt(X**2 + Y**2)
@@ -19,7 +19,7 @@ def jnp_bivariate_normal_pdf(domain, mean, variance):
   return X+mean, Y+mean, Z
 
 def plt_plot_bivariate_normal_pdf(x, y, z):
-      fig = plt.figure(figsize=(12, 6))
+  fig = plt.figure(figsize=(12, 6))
   ax = fig.gca(projection='3d')
   ax.plot_surface(x, y, z, 
                   cmap=cm.coolwarm,
